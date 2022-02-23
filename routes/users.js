@@ -9,7 +9,7 @@ router.use(bodyParser.json());
 
 /* GET users listing. */
 router.get('/', authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
-  User.find({})
+    User.find({})
       .then((users) => {
           res.statusCode = 200;
           res.setHeader('Content-Type', 'application/json');
